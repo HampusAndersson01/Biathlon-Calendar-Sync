@@ -47,5 +47,12 @@ def generate_calendar():
     else:
         return Response("Failed to fetch events data.", status=500)
 
+@app.route('/')
+def index():
+    return Response(
+        "Welcome to the Biathlon Event Calendar. Use the /calendar endpoint to download the calendar.",
+        content_type="text/plain"
+    )
+
 if __name__ == '__main__':
     app.run(debug=True)

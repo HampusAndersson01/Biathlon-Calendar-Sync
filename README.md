@@ -1,4 +1,4 @@
-# Biathlon Event Calendar Generator
+# Biathlon Event Calendar
 
 Easily download and import biathlon event data from the Biathlon World Cup into your calendar.
 
