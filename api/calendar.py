@@ -14,6 +14,7 @@ def generate_calendar():
         events_data = response.json()
         level_1_events = [event for event in events_data if event['Level'] == 1]
         calendar = Calendar()
+        calendar.creator = "Biathlon"
 
         for event in level_1_events:
             event_id = event['EventId']
@@ -24,7 +25,6 @@ def generate_calendar():
                 competitions_data = comp_response.json()
 
                 for competition in competitions_data:
-                    race_id = competition["RaceId"]
                     event_name = competition["ShortDescription"]
                     description = competition["Description"]
                     start_time_str = competition["StartTime"]
@@ -41,7 +41,6 @@ def generate_calendar():
                     ical_event.description = description
                     calendar.events.add(ical_event)
 
-        # Generate ICS file response
         ics_data = str(calendar)
         return Response(ics_data, content_type="text/calendar", headers={"Content-Disposition": "attachment;filename=ibu.ics"})
     else:
