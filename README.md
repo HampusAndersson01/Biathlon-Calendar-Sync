@@ -1,4 +1,4 @@
-# Biathlon Event Calendar
+# Biathlon Calendar Sync
 
 Easily download and import biathlon event data from the Biathlon World Cup into your calendar.
 
